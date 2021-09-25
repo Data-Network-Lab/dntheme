@@ -1,8 +1,8 @@
-Package: DN_theme
+Package: dntheme
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "NiccolÃ²",
+    person(given = "Niccolo",
            family = "Salvini",
            role = c("aut", "cre"),
            email = "niccolo.salvini27@gmail.com")
