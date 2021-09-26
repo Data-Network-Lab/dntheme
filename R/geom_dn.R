@@ -1,6 +1,12 @@
 #' @title dn geom
 #' @description most of the code is from emoGG https://github.com/dill/emoGG
-#' @author Ricardo Bion
+#'
+#' @param x raster grob x dim
+#' @param y raster grob y dim
+#' @param size logo size
+#' @param theme inherits theme
+#' @param geom_key which logo
+#'
 #' @export geom_dn
 #'
 #' @export
