@@ -17,9 +17,17 @@ dnGrob(
     X23andme = "https://www.23andme.com/static/img/logos/meta_logo.5f584d06594e.png")
 )
 }
+\arguments{
+\item{x}{raster grob x dim}
+
+\item{y}{raster grob y dim}
+
+\item{size}{logo size}
+
+\item{theme}{inherits theme}
+
+\item{geom_key}{which logo}
+}
 \description{
 most of the code is from emoGG https://github.com/dill/emoGG
-}
-\author{
-Ricardo Bion
 }
