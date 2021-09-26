@@ -130,3 +130,13 @@ download.file("http://social-fonts.com/assets/fonts/arista-light/arista-light.tt
 font_import(pattern = 'pico-black.ttf', prompt=FALSE)
 font_import(pattern = 'arista-light.ttf', prompt=FALSE)
 ```
+
+## License
+
+[(Back to top)](#table-of-contents)
+
+Please visit the LICENSE.md file.
+
+<!-- Add the footer here -->
+
+![Footer](man/figures/footer.png)

@@ -160,3 +160,13 @@ font_import(pattern = 'arista-light.ttf', prompt=FALSE)
 ```
 
 
+## License
+
+[(Back to top)](#table-of-contents)
+
+Please visit the LICENSE.md file.
+
+<!-- Add the footer here -->
+
+![Footer](man/figures/footer.png)
+
