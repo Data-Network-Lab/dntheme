@@ -1,113 +1,104 @@
-# Scales
+# Scales ----
 
-#' Extract Data Network colors as hex codes
-#'
-#' @param ... Names of colors in \code{dn_colors}.
+#' @title Data Network palette
+#' @description Original Data Network color palette
+#' @inheritDotParams ggplot2::discrete_scale
+#' @param n number of colors
+#' @param type discrete or continuous
+#' @param reverse reverse order, Default: FALSE
+#' @rdname dn_palette
 #' @export
+#' @examples
+#' library(scales)
+#' show_col(dn_palette()(5))
+#' @importFrom scales manual_pal
+#' @importFrom glue glue
+#' @importFrom grDevices colorRampPalette
 
-get_dn_colors <- function(...) {
 
-  colors <- c(...)
-  if (is.null(colors))
-    return (dn_colors)
-  dn_colors[colors]
+dn_palette <- function(n,
+                       type = c("discrete", "continuous"),
+                       reverse = FALSE){
+
+  dn_colors_pal <- get_dn_hex()
+
+  if (reverse == TRUE) {
+    dn_colors_pal <- rev(dn_colors_pal)
+  }
+
+  if (missing(n)) {
+    n <- length(dn_colors_pal)
+  }
+
+  type <- match.arg(type)
+
+  if (type == "discrete" && n > length(dn_colors_pal)) {
+    stop(glue::glue("Palette does not have {n} colors, maximum is {length(dn_colors_pal)}!"))
+  }
+
+  dn_colors_pal <- switch(type,
+                         continuous = grDevices::colorRampPalette(dn_colors_pal)(n),
+                         discrete = dn_colors_pal[1:n])
+
+  dn_colors_pal <- scales::manual_pal(dn_colors_pal)
+
+  return(dn_colors_pal)
 }
 
-#' Return a function which interpolates a dn color palette
-#'
-#' @param palette Name of palette in \code{dn_palettes}.
-#' @param reverse Boolean to indicate whether the palette should be reversed.
-#' @param ... Additional arguments to pass to \code{colorRampPalette}.
+
+
+
+#' @title scale_color_dn
+#' @rdname dn_pal
 #' @export
-
-get_dn_palette <- function(
-  palette = "five",
-  reverse = FALSE, ...) {
-
-  dn_palettes <- list(
-    two =   get_dn_colors(
-      "han_purple",
-      "maximum_blu_purple"),
-    three =  get_dn_colors(
-      "han_purple",
-      "maximum_blu_purple",
-      "lavender_blue_1"),
-    four = get_dn_colors(
-      "han_purple",
-      "maximum_blu_purple",
-      "lavender_blue_1",
-      "lavender_blue_2"),
-    five = get_dn_colors(
-      "han_purple",
-      "maximum_blu_purple",
-      "lavender_blue_1",
-      "lavender_blue_2",
-      "sky_blue_crayola"),
-    six = get_dn_colors(
-      "han_purple",
-      "maximum_blu_purple",
-      "lavender_blue_1",
-      "lavender_blue_2",
-      "sky_blue_crayola",
-      "turquoise_1"),
-    seven = get_dn_colors(
-      "han_purple",
-      "maximum_blu_purple",
-      "lavender_blue_1",
-      "lavender_blue_2",
-      "sky_blue_crayola",
-      "turquoise_1",
-      "turquoise_2"))
-
-  p <- dn_palettes[[palette]]
-  if (reverse) p <- rev(p)
-  grDevices::colorRampPalette(p, ...)
-}
-
-#' Color scale for dn colors
+#' @examples
 #'
-#' @param palette Name of palette in \code{dn_palettes}.
-#' @param discrete Boolean to indicate if color aesthetic is discrete.
-#' @param reverse Boolean to indicate whether palette should be reversed.
-#' @param ... Additional arguments passed to \code{discrete_scale} or
-#'   \code{scale_color_gradientn}, depending on the value of \code{discrete}.
-#' @export
+#' library(ggplot2)
+#' ggplot(airquality, aes(x = Day, y = Temp,
+#'      group = as.factor(Month), color = as.factor(Month))) +
+#'      geom_point(size = 2.5) +
+#'      scale_color_dn()
+#' @importFrom ggplot2 discrete_scale scale_color_gradientn
 
-scale_color_dn <- function(
-  palette = "seven",
-  discrete = TRUE,
-  reverse = FALSE, ...) {
-
-  p <- get_dn_palette(palette = palette, reverse = reverse)
-
-  if (discrete) {
-    ggplot2::discrete_scale(
-      "color", paste0("dn_", palette), palette = p, ...)
-  } else {
-    ggplot2::scale_color_gradientn(colors = p(256), ...)
+scale_color_dn <- function(n, type = "discrete",
+                                     reverse = FALSE, ...){
+  if (type == "discrete") {
+    ggplot2::discrete_scale("color", "dn_", dn_palette(), ...)
+  } else { ## needs work...
+    ggplot2::scale_color_gradientn(colors = dn_palette(n = n, type = type,
+                                                             reverse = reverse)(6))
   }
 }
 
-#' Fill scale for dn colors
-#'
-#' @param palette Name of palette in \code{dn_palettes}.
-#' @param discrete Boolean to indicate if color aesthetic is discrete.
-#' @param reverse Boolean to indicate whether palette should be reversed.
-#' @param ... Additional arguments passed to \code{discrete_scale} or
-#'   \code{scale_color_gradientn}, depending on the value of \code{discrete}.
+#' @title scale_colour_dn
+#' @rdname dn_palette
 #' @export
+#' @examples
+#'
+#' ggplot(airquality, aes(x = Day, y = Temp,
+#'      group = as.factor(Month), color = as.factor(Month))) +
+#'      geom_point(size = 2.5) +
+#'      scale_colour_dn()
+#' @importFrom ggplot2 discrete_scale scale_color_gradientn
 
-scale_fill_dn <- function(
-  palette = "seven",
-  discrete = TRUE,
-  reverse = FALSE, ...) {
+scale_colour_dn <- scale_color_dn
 
-  p <- get_dn_palette(palette = palette, reverse = reverse)
+#' @title scale_fill_dn
+#' @rdname dn_palette
+#' @export
+#' @examples
+#'
+#' ggplot(mpg, aes(displ)) +
+#'      geom_histogram(aes(fill = class), col = "black", size = 0.1) +
+#'      scale_fill_dn()
+#' @importFrom ggplot2 discrete_scale scale_fill_gradientn
 
-  if (discrete) {
-    ggplot2::discrete_scale(
-      "fill", paste0("dn_", palette), palette = p, ...)
-  } else {
-    ggplot2::scale_fill_gradientn(colors = p(256), ...)
+scale_fill_dn <- function(n, type = "discrete",
+                                    reverse = FALSE, ...){
+  if (type == "discrete") {
+    ggplot2::discrete_scale("fill", "dn_", dn_palette(), ...)
+  } else { ## needs work...
+    ggplot2::scale_fill_gradientn(colors = dn_palette(n = n, type = type,
+                                                            reverse = reverse)(6))
   }
 }

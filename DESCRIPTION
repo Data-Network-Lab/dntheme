@@ -16,8 +16,10 @@ RoxygenNote: 7.1.1
 Imports: 
     cowplot (>= 1.1.1),
     ggplot2 (>= 3.3.5),
+    glue (>= 1.4.2),
     grDevices (>= 4.0.3),
     grid (>= 4.0.3),
+    here (>= 1.0.1),
     magick (>= 2.7.2),
     magrittr,
     patchwork (>= 1.1.1),
@@ -26,7 +28,9 @@ Imports:
     rlang (>= 0.4.11),
     rsvg (>= 2.1.2),
     scales (>= 1.1.1),
+    showtext (>= 0.9.1),
     stringr (>= 1.4.0),
+    sysfonts (>= 0.8.3),
     uuid (>= 0.1.4)
 Suggests: 
     testthat (>= 3.0.0),

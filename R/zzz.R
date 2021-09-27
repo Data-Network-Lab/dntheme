@@ -30,21 +30,30 @@ set_dn_family <- function(family, title_family = NULL) {
 
 .onLoad <- function(libname, pkgname) {
 
-  # Set a default fonts if system can't be detected
-  family <- "Arial"
-  title_family <- family
+  ## add G font "Raleway"
+  sysfonts::font_add("raleway", here::here("inst", "fonts", "Raleway-Regular.ttf"))
+  sysfonts::font_add("raleway_bold", here::here("inst", "fonts", "Raleway-ExtraBold.ttf"))
 
-  # Set a default font for each main desktop OS
-  switch(Sys.info()[['sysname']],
-         Windows = {
-           family <- "Trebuchet MS"
-           title_family <- family},
-         Linux = {
-           family <- ""
-           title_family <- family},
-         Darwin = {
-           family <- "Avenir Next"
-           title_family <- "Avenir Next Demi Bold"})
+  # Set a default fonts if system can't be detected
+  family <- "raleway"
+  family_bold <- "raleway_bold"
+  title_family <- family_bold
+
+
+  # turn on showtext
+  showtext::showtext_auto()
+
+  # # Set a default font for each main desktop OS
+  # switch(Sys.info()[['sysname']],
+  #        Windows = {
+  #          family <- "Trebuchet MS"
+  #          title_family <- family},
+  #        Linux = {
+  #          family <- ""
+  #          title_family <- family},
+  #        Darwin = {
+  #          family <- "Avenir Next"
+  #          title_family <- "Avenir Next Demi Bold"})
 
   # Set default options if options have not already been set
   op <- options()
