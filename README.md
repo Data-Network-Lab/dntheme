@@ -35,7 +35,7 @@ d <- qplot(carat, data = diamonds[diamonds$color %in%LETTERS[4:7], ], geom = "hi
 d
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="70%" style="display: block; margin: auto;" />
 
 Tech themes and scales:
 
@@ -46,7 +46,7 @@ d + theme_dn() +
        subtitle="the latest build of this README was 27/09/2021")
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="70%" style="display: block; margin: auto;" />
 
 Data Network color scales:
 
@@ -57,16 +57,16 @@ d1 <- qplot(x  = Sepal.Length, y =Sepal.Width,colour = Species,data = iris,geom 
 d1
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="70%" style="display: block; margin: auto;" />
 
 ``` r
-d1 + theme_dn() + 
+r = d1 + theme_dn() + 
   scale_color_dn() + 
   labs(title="Data Network theme tooo!", 
        subtitle="wow, iris species  are so popular")
-```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+save_png(r, filename = "prova.png", width = 12, height = 8)
+```
 
 DN\_geoms, inspired by [emoGG](https://github.com/dill/emoGG).
 
@@ -87,6 +87,8 @@ add_dn_titles(
     title = "Let's have this logos up here",
     subtitle = "they look fun")
 ```
+
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="70%" style="display: block; margin: auto;" />
 
 <!-- ```{r, eval=FALSE} -->
 <!-- ggplot(aes(x,y), data=d2) +  -->
