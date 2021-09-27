@@ -6,9 +6,15 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-## Installation
+This repo contains the functions of the `dntheme` package, which once
+installed locally, provides helpful functions for creating and exporting
+graphics made in ggplot in the style used by the Data Network
+associates.
 
-You can install the development version from
+## Installation 🔨
+
+`dnthemes` is not on CRAN, so you will have to install it directly from
+Github using devtools. You can install the development version from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -16,7 +22,7 @@ install.packages("devtools")
 devtools::install_github("Data-Network-Lab/DN_theme")
 ```
 
-### Use dntheme:
+## Use `dntheme` 💊
 
 Make sure to install the required fonts (instructions at the end of this
 file).
@@ -88,7 +94,11 @@ add_dn_titles(
 <!--   ggtitle("Etsy geom") -->
 <!-- ``` -->
 
-### Install fonts:
+## Data Network Palette 🌈
+
+![dn\_palette](man/figures/palette.png)
+
+### Install fonts 🔧
 
 You have to install the necessary fonts manually before using `ggtech`.
 Mofidy the `destfile` if you are using Windows or Unix.
