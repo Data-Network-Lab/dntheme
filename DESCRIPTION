@@ -24,6 +24,7 @@ Imports:
     magrittr,
     patchwork (>= 1.1.1),
     png (>= 0.1.7),
+    ragg (>= 1.1.3),
     RCurl (>= 1.98.1.3),
     rlang (>= 0.4.11),
     rsvg (>= 2.1.2),

@@ -4,6 +4,8 @@
 # dntheme
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/Data-Network-Lab/DN_theme/workflows/R-CMD-check/badge.svg)](https://github.com/Data-Network-Lab/DN_theme/actions)
 <!-- badges: end -->
 
 This repo contains the functions of the `dntheme` package, which once
