@@ -1,32 +1,25 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # dntheme
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-This repo contains the functions of the `dntheme` package, which once
-installed locally, provides helpful functions for creating and exporting
-graphics made in ggplot in the style used by the Data Network associates
-& projects.
+This repo contains the functions of the `dntheme` package, which once installed locally, provides helpful functions for creating and exporting graphics made in ggplot in the style used by the Data Network associates & projects.
 
-## Installation 🔨
+## Installation :hammer:
 
-`dntheme` is not on CRAN, so you will have to install it directly from
-Github using devtools. You can install the development version from
-[GitHub](https://github.com/) with:
+`dntheme` is not on CRAN, so you will have to install it directly from Github using devtools. You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 install.packages("devtools")
 devtools::install_github("Data-Network-Lab/dntheme")
 ```
 
-## Use `dntheme` 💊
+## Use `dntheme` :pill:
 
-The package automagically 🧙 imports (via `showtext`) the **Raleway**
-Google font ([Raleway,
-sans-serif](https://fonts.google.com/specimen/Raleway))
+The package automagically :mage: imports (via `showtext`) the **Raleway** Google font ([Raleway, sans-serif](https://fonts.google.com/specimen/Raleway))
 
 ``` r
 library(dntheme)
@@ -35,7 +28,7 @@ d <- qplot(carat, data = diamonds[diamonds$color %in%LETTERS[4:7], ], geom = "hi
 d
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="70%" style="display: block; margin: auto;"/>
 
 Tech themes and scales:
 
@@ -46,7 +39,7 @@ d + theme_dn() +
        subtitle="the latest build of this README was 27/09/2021")
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="70%" style="display: block; margin: auto;"/>
 
 Data Network color scales:
 
@@ -57,7 +50,7 @@ d1 <- qplot(x  = Sepal.Length, y =Sepal.Width,colour = Species,data = iris,geom 
 d1
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="70%" style="display: block; margin: auto;"/>
 
 ``` r
 r = d1 + theme_dn() + 
@@ -68,7 +61,7 @@ r = d1 + theme_dn() +
 save_png(r, filename = "prova.png", width = 12, height = 8)
 ```
 
-DN\_geoms, inspired by [emoGG](https://github.com/dill/emoGG).
+DN_geoms, inspired by [emoGG](https://github.com/dill/emoGG).
 
 ``` r
 d2 <- data.frame(x = c(1:4, 3:1), y=1:7)
@@ -88,18 +81,23 @@ add_dn_titles(
     subtitle = "they look fun")
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="70%" style="display: block; margin: auto;"/>
 
 <!-- ```{r, eval=FALSE} -->
+
 <!-- ggplot(aes(x,y), data=d2) +  -->
+
 <!--   geom_tech(size=0.15, theme="etsy") +  -->
+
 <!--   theme_tech("etsy")+ -->
+
 <!--   ggtitle("Etsy geom") -->
+
 <!-- ``` -->
 
-## Data Network Palette 🌈
+## Data Network Palette :rainbow:
 
-![dn\_palette](man/figures/palette.png)
+![dn_palette](man/figures/palette.png)
 
 ## License
 
