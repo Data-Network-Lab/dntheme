@@ -1,6 +1,4 @@
-# Themes
-
-## Theme functions ----
+# Theme ----
 
 #' dn ggplot theme
 #'
@@ -128,8 +126,8 @@ theme_dn <- function (
   legend_text_size = 10,
   facet_title_size = 10,
   caption_size = 9,
-  title_color = "#404040",
-  subtitle_color = "#404040",
+  title_color = get_dn_hex("han_purple"),
+  subtitle_color = get_dn_hex("maximum_blu_purple"),
   axis_title_color = "#404040",
   axis_text_color = "#404040",
   legend_title_color = "#404040",
@@ -149,7 +147,7 @@ theme_dn <- function (
     stop("The caption_position should be \"left\" or \"right\"")
   }
 
-  # Baseline theme
+  ## Baseline theme ----
   theme_dn <- ggplot2::theme(
     plot.background = ggplot2::element_rect(
       fill = background_color,
@@ -281,7 +279,7 @@ theme_dn <- function (
       size = facet_title_size,
       face = "bold"))
 
-  # Axes
+  ## Axes ----
   axis_line <- ggplot2::element_line(
     color = axis_line_color,
     size = 0.3,
@@ -315,7 +313,7 @@ theme_dn <- function (
         axis.ticks.y.left = axis_line)
   }
 
-  # Gridlines
+  ## Gridlines ----
   grid_line <- ggplot2::element_line(
     color = grid_color,
     size = 0.35,
@@ -331,7 +329,7 @@ theme_dn <- function (
       ggplot2::theme(panel.grid.major.y = grid_line)
   }
 
-  # Legend
+  ## Legend ----
   if (legend_position %in% c("top", "right", "bottom", "left", "none")) {
 
     theme_dn <- theme_dn %+replace%
@@ -379,7 +377,7 @@ theme_dn <- function (
   theme_dn
 }
 
-# Function to add correctly aligned titles ------------------------------------
+# Function to add correctly aligned titles ----
 
 #' Add titles to a plot using the Cdn theme style
 #'
