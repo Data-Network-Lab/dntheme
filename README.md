@@ -8,8 +8,8 @@
 
 This repo contains the functions of the `dntheme` package, which once
 installed locally, provides helpful functions for creating and exporting
-graphics made in ggplot in the style used by the Data Network
-associates.
+graphics made in ggplot in the style used by the Data Network associates
+& projects.
 
 ## Installation 🔨
 
@@ -24,8 +24,9 @@ devtools::install_github("Data-Network-Lab/DN_theme")
 
 ## Use `dntheme` 💊
 
-Make sure to install the required fonts (instructions at the end of this
-file).
+The package automagically 🧙 imports (via `showtext`) the **Raleway**
+Google font ([Raleway,
+sans-serif](https://fonts.google.com/specimen/Raleway))
 
 ``` r
 library(dntheme)
@@ -41,8 +42,8 @@ Tech themes and scales:
 ``` r
 d + theme_dn() + 
   scale_fill_dn() + 
-  labs(title="Airbnb theme", 
-       subtitle="now with subtitles for ggplot2 >= 2.1.0")
+  labs(title="Data Network theme", 
+       subtitle="the latest build of this README was 27/09/2021")
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
@@ -61,8 +62,8 @@ d1
 ``` r
 d1 + theme_dn() + 
   scale_color_dn() + 
-  labs(title="Airbnb theme", 
-       subtitle="now with subtitles for ggplot2 >= 2.1.0")
+  labs(title="Data Network theme tooo!", 
+       subtitle="wow, iris species nowadays are so popular")
 ```
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
@@ -97,49 +98,6 @@ add_dn_titles(
 ## Data Network Palette 🌈
 
 ![dn\_palette](man/figures/palette.png)
-
-### Install fonts 🔧
-
-You have to install the necessary fonts manually before using `ggtech`.
-Mofidy the `destfile` if you are using Windows or Unix.
-
-``` r
-library(extrafont)
-
-## Facebook 
-download.file("http://social-fonts.com/assets/fonts/facebook-letter-faces/facebook-letter-faces.ttf", "/Library/Fonts/facebook-letter-faces.ttf", method="curl")
-
-font_import(pattern = 'facebook-letter-faces.ttf', prompt=FALSE)
-
-
-## Google 
-download.file("http://social-fonts.com/assets/fonts/product-sans/product-sans.ttf", "/Library/Fonts/product-sans.ttf", method="curl")
-
-font_import(pattern = 'product-sans.ttf', prompt=FALSE)
-
-
-## Airbnb 
-download.file("https://dl.dropboxusercontent.com/u/2364714/airbnb_ttf_fonts/Circular%20Air-Medium%203.46.45%20PM.ttf", "/Library/Fonts/Circular Air-Medium 3.46.45 PM.ttf", method="curl")
-
-download.file("https://dl.dropboxusercontent.com/u/2364714/airbnb_ttf_fonts/Circular%20Air-Bold%203.46.45%20PM.ttf", "/Library/Fonts/Circular Air-Bold 3.46.45 PM.ttf", method="curl")
-
-font_import(pattern = 'Circular', prompt=FALSE)
-
-
-## Etsy 
-download.file("https://www.etsy.com/assets/type/Guardian-EgypTT-Text-Regular.ttf", "/Library/Fonts/Guardian-EgypTT-Text-Regular.ttf", method="curl")
-
-font_import(pattern = 'Guardian-EgypTT-Text-Regular.ttf', prompt=FALSE)
-
-
-## Twitter 
-download.file("http://social-fonts.com/assets/fonts/pico-black/pico-black.ttf", "/Library/Fonts/pico-black.ttf", method="curl")
-
-download.file("http://social-fonts.com/assets/fonts/arista-light/arista-light.ttf", "/Library/Fonts/arista-light.ttf", method="curl")
-
-font_import(pattern = 'pico-black.ttf', prompt=FALSE)
-font_import(pattern = 'arista-light.ttf', prompt=FALSE)
-```
 
 ## License
 
