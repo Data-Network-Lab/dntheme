@@ -9,9 +9,11 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
+  fig.width=12,
+  fig.height=8,
   out.width = "100%", 
   warning = FALSE, 
-  dpi = 500
+  dpi = 400
 )
 
 library(ggplot2, quietly = T)
@@ -74,12 +76,10 @@ d1
 
 ```{r}
 
-r = d1 + theme_dn() + 
+d1 + theme_dn() + 
   scale_color_dn() + 
   labs(title="Data Network theme tooo!", 
        subtitle="wow, iris species  are so popular")
-
-save_png(r, filename = "prova.png", width = 12, height = 8)
 
 ```
 
