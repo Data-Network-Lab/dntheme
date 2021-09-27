@@ -9,6 +9,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
+  fig.width=12,
+  fig.height=8,
   out.width = "100%", 
   warning = FALSE, 
   dpi = 500
@@ -27,12 +29,12 @@ This repo contains the functions of the `dntheme` package, which once installed 
 
 ## Installation 🔨 
 
-`dnthemes` is not on CRAN, so you will have to install it directly from Github using devtools.
+`dntheme` is not on CRAN, so you will have to install it directly from Github using devtools.
 You can install the development version from [GitHub](https://github.com/) with:
 
 ``` {r, eval=FALSE}
 install.packages("devtools")
-devtools::install_github("Data-Network-Lab/DN_theme")
+devtools::install_github("Data-Network-Lab/dntheme")
 ```
 
 
