@@ -5,12 +5,19 @@ output: github_document
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
+library(ragg)
+
+ragg_png = function(..., res = 400) {
+  ragg::agg_png(..., res = res, units = "in")
+}
+
+
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  fig.height = 8,
-  fig.width = 12,
+  fig.ext = "png",
+  dev = "ragg_png",
   out.width = "100%",
   warning = FALSE
 )
@@ -81,7 +88,7 @@ r = d1 + theme_dn() +
   labs(title="Data Network theme tooo!", 
        subtitle="wow, iris species  are so popular")
 
-save_png(r, filename = "prova.png", width = 12, height = 8)
+
 
 ```
 

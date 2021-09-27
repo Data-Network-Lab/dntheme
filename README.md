@@ -64,8 +64,6 @@ r = d1 + theme_dn() +
   scale_color_dn() + 
   labs(title="Data Network theme tooo!", 
        subtitle="wow, iris species  are so popular")
-
-save_png(r, filename = "prova.png", width = 12, height = 8)
 ```
 
 DN\_geoms, inspired by [emoGG](https://github.com/dill/emoGG).
