@@ -30,9 +30,32 @@ set_dn_family <- function(family, title_family = NULL) {
 
 .onLoad <- function(libname, pkgname) {
 
-  ## add G font "Raleway"
-  sysfonts::font_add("raleway", here::here("inst", "fonts", "Raleway-Regular.ttf"))
-  sysfonts::font_add("raleway_bold", here::here("inst", "fonts", "Raleway-ExtraBold.ttf"))
+  if("raleway" %in% sysfonts::font_families())
+    {
+    invisible()
+    } else {
+      sysfonts::font_add_google("Raleway", "raleway")
+    }
+
+  # directly  add G font from google i.e. "Raleway"
+
+
+  # ## add G font "Raleway"
+  # sysfonts::font_add("raleway", here::here("inst", "fonts", "Raleway-Regular.ttf"))
+  # sysfonts::font_add("raleway_bold", here::here("inst", "fonts", "Raleway-ExtraBold.ttf"))
+  #
+  # # Set a default font for each main desktop OS
+  # switch(Sys.info()[['sysname']],
+  #        Windows = {
+  #          family <- "raleway"
+  #          title_family <- "raleway_bold"},
+  #        Linux = {
+  #          family <- "raleway"
+  #          title_family <- family},
+  #        Darwin = {
+  #          family <- "Avenir Next"
+  #          title_family <- "Avenir Next Demi Bold"})
+
 
   # Set a default fonts if system can't be detected
   family <- "raleway"

@@ -8,9 +8,6 @@
 #' @param reverse reverse order, Default: FALSE
 #' @rdname dn_palette
 #' @export
-#' @examples
-#' library(scales)
-#' show_col(dn_palette()(5))
 #' @importFrom scales manual_pal
 #' @importFrom glue glue
 #' @importFrom grDevices colorRampPalette
@@ -50,18 +47,16 @@ dn_palette <- function(n,
 
 #' @title scale_color_dn
 #' @rdname dn_pal
+#' @param n number of colors
+#' @param type discrete or continuous
+#' @param reverse reverse order, Default: FALSE
+#' @param ... further params
 #' @export
-#' @examples
-#'
-#' library(ggplot2)
-#' ggplot(airquality, aes(x = Day, y = Temp,
-#'      group = as.factor(Month), color = as.factor(Month))) +
-#'      geom_point(size = 2.5) +
-#'      scale_color_dn()
 #' @importFrom ggplot2 discrete_scale scale_color_gradientn
 
-scale_color_dn <- function(n, type = "discrete",
-                                     reverse = FALSE, ...){
+scale_color_dn <- function(n,
+                           type = "discrete",
+                           reverse = FALSE, ...){
   if (type == "discrete") {
     ggplot2::discrete_scale("color", "dn_", dn_palette(), ...)
   } else { ## needs work...
@@ -72,29 +67,27 @@ scale_color_dn <- function(n, type = "discrete",
 
 #' @title scale_colour_dn
 #' @rdname dn_palette
+#' @param n number of colors
+#' @param type discrete or continuous
+#' @param reverse reverse order, Default: FALSE
+#' @param ... further params
 #' @export
-#' @examples
-#'
-#' ggplot(airquality, aes(x = Day, y = Temp,
-#'      group = as.factor(Month), color = as.factor(Month))) +
-#'      geom_point(size = 2.5) +
-#'      scale_colour_dn()
 #' @importFrom ggplot2 discrete_scale scale_color_gradientn
 
 scale_colour_dn <- scale_color_dn
 
 #' @title scale_fill_dn
 #' @rdname dn_palette
+#' @param n number of colors
+#' @param type discrete or continuous
+#' @param reverse reverse order, Default: FALSE
+#' @param ... further params
 #' @export
-#' @examples
-#'
-#' ggplot(mpg, aes(displ)) +
-#'      geom_histogram(aes(fill = class), col = "black", size = 0.1) +
-#'      scale_fill_dn()
 #' @importFrom ggplot2 discrete_scale scale_fill_gradientn
 
-scale_fill_dn <- function(n, type = "discrete",
-                                    reverse = FALSE, ...){
+scale_fill_dn <- function(n,
+                          type = "discrete",
+                          reverse = FALSE, ...){
   if (type == "discrete") {
     ggplot2::discrete_scale("fill", "dn_", dn_palette(), ...)
   } else { ## needs work...

@@ -2,7 +2,7 @@
 % Please edit documentation in R/colors.R
 \name{get_dn_colors}
 \alias{get_dn_colors}
-\title{Extract Data Network colors fron hex codes}
+\title{Extract Data Network colors from hex codes}
 \usage{
 get_dn_colors(...)
 }
@@ -10,5 +10,5 @@ get_dn_colors(...)
 \item{...}{Names of colors in \code{dn_colors}.}
 }
 \description{
-Extract Data Network colors fron hex codes
+Extract Data Network colors from hex codes
 }

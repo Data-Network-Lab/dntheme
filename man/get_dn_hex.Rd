@@ -9,9 +9,6 @@ get_dn_hex(color_name)
 \arguments{
 \item{color_name}{the color name in dn_colors}
 }
-\value{
-
-}
 \description{
 Get the hex code for a dn color palette
 }

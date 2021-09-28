@@ -85,16 +85,3 @@ The default, \code{TRUE}, uses the levels that appear in the data;
 \description{
 Original Data Network color palette
 }
-\examples{
-library(scales)
-show_col(dn_palette()(5))
-
-ggplot(airquality, aes(x = Day, y = Temp,
-     group = as.factor(Month), color = as.factor(Month))) +
-     geom_point(size = 2.5) +
-     scale_colour_dn()
-
-ggplot(mpg, aes(displ)) +
-     geom_histogram(aes(fill = class), col = "black", size = 0.1) +
-     scale_fill_dn()
-}

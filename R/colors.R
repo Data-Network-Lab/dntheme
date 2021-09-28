@@ -19,15 +19,13 @@ dn_colors <- c(
 #' Get the hex code for a dn color palette
 #'
 #' @param color_name the color name in dn_colors
-#'
-#' @return
 #' @export
 get_dn_hex <- function (color_name) {
   unname(dn_colors[color_name])
 }
 
 
-#' Extract Data Network colors fron hex codes
+#' Extract Data Network colors from hex codes
 #'
 #' @param ... Names of colors in \code{dn_colors}.
 #' @export

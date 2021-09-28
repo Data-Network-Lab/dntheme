@@ -6,14 +6,15 @@
 \usage{
 scale_color_dn(n, type = "discrete", reverse = FALSE, ...)
 }
+\arguments{
+\item{n}{number of colors}
+
+\item{type}{discrete or continuous}
+
+\item{reverse}{reverse order, Default: FALSE}
+
+\item{...}{further params}
+}
 \description{
 scale_color_dn
-}
-\examples{
-
-library(ggplot2)
-ggplot(airquality, aes(x = Day, y = Temp,
-     group = as.factor(Month), color = as.factor(Month))) +
-     geom_point(size = 2.5) +
-     scale_color_dn()
 }

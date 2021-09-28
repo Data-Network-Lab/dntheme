@@ -20,6 +20,7 @@ Imports:
     grDevices (>= 4.0.3),
     grid (>= 4.0.3),
     here (>= 1.0.1),
+    jsonlite (>= 1.7.2),
     magick (>= 2.7.2),
     magrittr,
     patchwork (>= 1.1.1),
